@@ -20,6 +20,7 @@ import { InsuranceRepository } from './modules/insurance/insurance.repository';
 import { NotificationController } from './modules/notifications/notification.controller';
 import { NotificationService } from './modules/notifications/notification.service';
 import { NotificationScheduler } from './modules/notifications/notification.scheduler';
+import { HealthController } from './health.controller';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { NotificationScheduler } from './modules/notifications/notification.sche
     }),
   ],
   controllers: [
+    HealthController,
     AuthController,
     PetsController,
     MedicalController,

@@ -1,24 +1,15 @@
 import { Button, Card, Form, Input, Typography } from 'antd';
 import { HeartFilled } from '@ant-design/icons';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { useLogin } from '../hooks/useAuth';
 import { useAuthStore } from '../stores/authStore';
-import { UserRole } from '../constants/enums';
 
 export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const token = useAuthStore((state) => state.token);
-  const setSession = useAuthStore((state) => state.setSession);
   const login = useLogin();
   const from = (location.state as { from?: string } | null)?.from || '/pets';
-
-  useEffect(() => {
-    if (!token && !localStorage.getItem('ldpetcare-auth')) {
-      setSession('demo-token', { id: 'owner-demo', email: 'owner@petcare.test', name: '林一一', role: UserRole.PET_OWNER });
-    }
-  }, [setSession, token]);
 
   if (token) return <Navigate to={from} replace />;
 

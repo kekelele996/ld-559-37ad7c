@@ -1,6 +1,7 @@
 # PetCare+ 宠物医疗与保险管理平台
 
 ```bash
+cp .env.example .env
 docker compose up -d
 ```
 
@@ -14,6 +15,7 @@ cd frontend && npm install && npm run dev
 访问地址：
 - 前端：http://localhost:38408
 - 后端 API：http://localhost:38506/api/v1
+- 健康检查：http://localhost:38506/api/v1/health
 
 PetCare+ 是面向宠物主人、兽医和管理员的一站式宠物健康管理平台，覆盖宠物档案、就诊记录、疫苗接种计划、保险保单和提醒通知。
 
